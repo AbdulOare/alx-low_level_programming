@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
  * main - Print with put
- * 
- * Return: Always 0 (Confirmed)
+ * Return: Always 0
  */
 int main(void)
 {
