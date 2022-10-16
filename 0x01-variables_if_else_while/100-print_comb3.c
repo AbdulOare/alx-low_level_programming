@@ -1,28 +1,27 @@
 #include <stdio.h>
-#include <unistd.h>
 /**
- * main - Entry point
- * Description: This prints two digits number combination
- * Return: Always 0 (confirmed)
- */
+* main - This program prints all two digit combinations with ,
+* space and a new line
+* Return: returns 0
+*/
 int main(void)
 {
-	int c, i;
+	int digit_1, digit_2;
 
-	for (c = '0'; c <= '9'; c++)
+	for (digit_1 = 0; digit_1 < 9; digit_1++)
 	{
-		for (i = '0'; i <= '9'; i++)
+		for (digit_2 = digit_1 + 1; digit_2 < 10; digit_2++)
 		{
-			if (c < i)
-			{
-				putchar(c);
-				putchar(i);
-				if (c != '8' || (c == '8' && i != '9'))
 
-					putchar(',');
-					putchar(' ');
-				}
-			}
+			putchar((digit_1 % 10) + '0');
+			putchar((digit_2 % 10) + '0');
+
+			if (digit_1 == 8 && digit_2 == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);
